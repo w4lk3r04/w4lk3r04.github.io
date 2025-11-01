@@ -111,7 +111,7 @@ const App: React.FC = () => {
               <div className="p-6 border-4 border-green-700 rounded-md bg-white dark:bg-black">
                 <h3 className="text-3xl font-extrabold dark:text-white">Professional Experience & Achievements</h3>
                 <p className="mt-3 text-xl text-gray-600 dark:text-gray-300">
-                  Timeline and highlights from my career — roles in SOC analysis, security operations, incident response, and proactive threat detection.
+                  Highlights from my career — roles in SOC analysis, security operations, incident response, and proactive threat detection.
                 </p>
                 <div className="mt-6">
                   <div className="space-y-4">
@@ -240,6 +240,82 @@ const App: React.FC = () => {
         </div>
       </section>
 
+    {/* #### CERTIFICATIONS SECTION #### */}
+    <section className="bg-white dark:bg-black pt-8 pb-12">
+      <div className="max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6 relative z-20">
+        <div className="max-w-screen-md mb-8 lg:mb-16 mx-auto text-center">
+          <h2 className="mb-4 text-4xl md:text-5xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+            Certifications & Achievements
+          </h2>
+          <p className="text-gray-500 text-2xl dark:text-gray-400">
+            Professional certifications and notable achievements in cybersecurity
+          </p>
+        </div>
+
+        <div className="grid gap-8 lg:grid-cols-2">
+          {/* Professional Certifications */}
+          <div className="p-6 border-4 border-green-700 rounded-md bg-white dark:bg-black">
+            <h3 className="text-2xl font-bold dark:text-white mb-4">
+              <i className="fas fa-certificate mr-2"></i>Professional Certifications
+            </h3>
+            <ul className="space-y-4 text-lg text-gray-600 dark:text-gray-300">
+              <li className="flex items-start">
+                <span className="mr-2">•</span>
+                <span><strong>Google Professional Certifications:</strong> IT Support, Cybersecurity, Cloud Cybersecurity</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2">•</span>
+                <span><strong>Microsoft Azure:</strong> Fundamentals certification (AZ-900)</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2">•</span>
+                <span><strong>Networking:</strong> Mikrotik Certified Network Associate (MTCNA)</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2">•</span>
+                <span><strong>ISC2:</strong> Certified in Cybersecurity Candidate</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2">•</span>
+                <span><strong>Technical Skills:</strong> Ethical Hacking, Networking Fundamentals, Python Programming, Linux Fundamentals</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Achievements & Recognition */}
+          <div className="p-6 border-4 border-green-700 rounded-md bg-white dark:bg-black">
+            <h3 className="text-2xl font-bold dark:text-white mb-4">
+              <i className="fas fa-trophy mr-2"></i>Achievements & Recognition
+            </h3>
+            <ul className="space-y-4 text-lg text-gray-600 dark:text-gray-300">
+              <li className="flex items-start">
+                <span className="mr-2">•</span>
+                <span><strong>CTF Competitions:</strong>
+                  <ul className="ml-6 mt-2 space-y-2">
+                    <li>- 45th Place at PicoCTF 2023</li>
+                    <li>- 48th/147 at Bjwhitehats CTF 2025</li>
+                  </ul>
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2">•</span>
+                <span><strong>Program Graduate:</strong> Blacks in Cybersecurity Blue Team Program</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2">•</span>
+                <span><strong>Scholarships:</strong>
+                  <ul className="ml-6 mt-2">
+                    <li>- Umuzi Program Scholar</li>
+                    <li>- Mentor Me Collective Google Career Launchpad Scholar</li>
+                  </ul>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     {/* #### ACCOLADES SECTION #### */}
         <section className="bg-white dark:bg-black ">
           <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-28 lg:px-6 border-4 border-solid border-green-700 bg-white dark:bg-black relative z-20">
@@ -264,7 +340,7 @@ const App: React.FC = () => {
               </div>
               <div className="flex flex-col items-center justify-center">
                   <dt className="mb-2 text-3xl md:text-4xl font-extrabold">
-                    Blue Team Program Graduate and Mentorship Fellow
+                    Blue Team Graduate and Mentorship Fellow
                   </dt>
                   <dd className="font-light text-xl text-gray-500 dark:text-gray-400">Blacks in Cybersecurity</dd>
               </div>
@@ -394,6 +470,7 @@ const App: React.FC = () => {
           <li>• Real-time traffic analysis</li>
           <li>• Anomaly detection</li>
           <li>• Custom alert system</li>
+          <li>• <a href="https://github.com/AKOGBEAmos/internship-projects/blob/main/network_sniffer.py" className="text-green-500 hover:text-green-600" target="_blank" rel="noopener noreferrer">View on GitHub →</a></li>
         </ul>
       </div>
 
@@ -415,21 +492,22 @@ const App: React.FC = () => {
         </ul>
       </div>
 
-      {/* Phishing Detection */}
+      {/* Kathara Lab */}
       <div className="bg-white dark:bg-black border-4 border-green-700 rounded-lg p-8 transform transition-all duration-300 hover:scale-105">
         <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
           <svg className="w-[48px] h-[48px] text-gray-800 dark:text-white transition-colors duration-300 group-hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <path stroke="currentColor" strokeLinecap="round" strokeWidth="1" d="M12 6h8.1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2m6 0v4m0 0a2 2 0 0 1 2-2h.1a2 2 0 0 1 2 2v.1a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V10Zm-3.5 2a2 2 0 0 1-2 2h-.1a2 2 0 0 1-2-2v-.1a2 2 0 0 1 2-2h.1a2 2 0 0 1 2 2v.1Z"/>
+            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M13 3h-8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8M9 12h6m-3-3v6m3-9h5l3 3v12a2 2 0 0 1-2 2h-6"/>
           </svg>
         </div>
-        <h3 className="mb-4 text-2xl font-bold dark:text-white">PhishGuard</h3>
+        <h3 className="mb-4 text-2xl font-bold dark:text-white">Kathara Security Lab</h3>
         <p className="text-gray-500 dark:text-gray-400 mb-4 text-lg">
-          Machine learning-based phishing detection system. Analyzes emails and URLs for potential threats using advanced algorithms.
+          Comprehensive security lab environment using Kathara for vulnerability analysis and attack simulation. Complete with infrastructure code and documentation.
         </p>
         <ul className="text-gray-500 dark:text-gray-400 text-lg space-y-2">
-          <li>• ML-powered detection</li>
-          <li>• URL/Domain analysis</li>
-          <li>• Automated reporting</li>
+          <li>• MITRE ATT&CK analysis</li>
+          <li>• Cyber Kill Chain mapping</li>
+          <li>• Full assessment reports</li>
+          <li>• <a href="https://github.com/AKOGBEAmos/internship-projects/tree/vuln_lab" className="text-green-500 hover:text-green-600" target="_blank" rel="noopener noreferrer">View on GitHub →</a></li>
         </ul>
       </div>
     </div>
