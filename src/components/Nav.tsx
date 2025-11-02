@@ -87,7 +87,7 @@ const Nav: React.FC = () => {
           View CV
         </a>
         <a
-        href="https://github.com/AKOGBEAmos"
+        href="https://github.com/w4lk3r04"
         target="_blank"
         rel="noopener noreferrer"
         className={`hidden md:flex mx-3 bg-gray-800 hover:bg-gray-900 py-2 px-4 transition-all duration-300 flex items-center gap-2 ${

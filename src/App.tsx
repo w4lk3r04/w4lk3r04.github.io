@@ -470,7 +470,7 @@ const App: React.FC = () => {
           <li>• Real-time traffic analysis</li>
           <li>• Anomaly detection</li>
           <li>• Custom alert system</li>
-          <li>• <a href="https://github.com/AKOGBEAmos/internship-projects/blob/main/network_sniffer.py" className="text-green-500 hover:text-green-600" target="_blank" rel="noopener noreferrer">View on GitHub →</a></li>
+          <li>• <a href="https://github.com/w4lk3r04/internship-projects/blob/main/network_sniffer.py" className="text-green-500 hover:text-green-600" target="_blank" rel="noopener noreferrer">View on GitHub →</a></li>
         </ul>
       </div>
 
@@ -507,7 +507,7 @@ const App: React.FC = () => {
           <li>• MITRE ATT&CK analysis</li>
           <li>• Cyber Kill Chain mapping</li>
           <li>• Full assessment reports</li>
-          <li>• <a href="https://github.com/AKOGBEAmos/internship-projects/tree/vuln_lab" className="text-green-500 hover:text-green-600" target="_blank" rel="noopener noreferrer">View on GitHub →</a></li>
+          <li>• <a href="https://github.com/w4lk3r04/internship-projects/tree/vuln_lab" className="text-green-500 hover:text-green-600" target="_blank" rel="noopener noreferrer">View on GitHub →</a></li>
         </ul>
       </div>
     </div>
