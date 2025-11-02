@@ -15,8 +15,7 @@ export default defineConfig({
     sourcemap: false,
     rollupOptions: {
       input: {
-        main: path.resolve(__dirname, 'index.html'),
-        custom: path.resolve(__dirname, 'public/assets/js/custom.js')
+        main: path.resolve(__dirname, 'index.html')
       },
       output: {
         assetFileNames: (assetInfo) => {
