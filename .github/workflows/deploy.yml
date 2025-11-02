@@ -30,13 +30,16 @@ jobs:
         run: |
           sed -i 's|src="/src/main.tsx"|src="/w4lk3r04.github.io/assets/js/main.js"|g' dist/index.html
           sed -i 's|src="/public/assets/js/custom.js"|src="/w4lk3r04.github.io/assets/js/custom.js"|g' dist/index.html
+          sed -i 's|href="/src/index.css"|href="/w4lk3r04.github.io/assets/css/index.css"|g' dist/index.html
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
       
-      - name: Create .nojekyll file
-        run: touch dist/.nojekyll
-        
+      - name: Create .nojekyll and copy MIME types
+        run: |
+          touch dist/.nojekyll
+          cp .mime.types dist/.mime.types
+          
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

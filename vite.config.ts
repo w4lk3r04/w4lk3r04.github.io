@@ -14,6 +14,7 @@ export default defineConfig({
     emptyOutDir: true,
     sourcemap: false,
     manifest: true,
+    cssCodeSplit: true,
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html')
