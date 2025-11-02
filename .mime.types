@@ -1,4 +1,5 @@
 {
+  "*.htmnl: "text/html",
   "*.css": "text/css",
   "*.js": "application/javascript"
 }
