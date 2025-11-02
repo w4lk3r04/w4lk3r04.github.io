@@ -1,4 +1,3 @@
-
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import * as path from 'path'
@@ -9,7 +8,7 @@ const __dirname = path.dirname(__filename)
 
 export default defineConfig({
   plugins: [react()],
-  base: '/w4lk3r04.github.io/',
+  base: '/',  // Changed from '/w4lk3r04.github.io/'
   build: {
     outDir: 'dist',
     emptyOutDir: true,
