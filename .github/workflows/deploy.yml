@@ -28,12 +28,15 @@ jobs:
 
       - name: Update index.html
         run: |
-          sed -i 's|src="./src/main.tsx"|src="/w4lk3r04.github.io/assets/js/main.js"|g' dist/index.html
-          sed -i 's|src="./public/assets/js/custom.js"|src="/w4lk3r04.github.io/assets/js/custom.js"|g' dist/index.html
+          sed -i 's|src="/src/main.tsx"|src="/w4lk3r04.github.io/assets/js/main.js"|g' dist/index.html
+          sed -i 's|src="/public/assets/js/custom.js"|src="/w4lk3r04.github.io/assets/js/custom.js"|g' dist/index.html
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
       
+      - name: Create .nojekyll file
+        run: touch dist/.nojekyll
+        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
