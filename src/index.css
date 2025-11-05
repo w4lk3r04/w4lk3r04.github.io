@@ -209,6 +209,29 @@
     width: 45%;
 }
 
+/* Stack timeline content on small screens to avoid overflow */
+@media (max-width: 768px) {
+  .timeline::after {
+    left: 12px;
+    margin-left: 0;
+  }
+  .timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 2rem;
+  }
+  .timeline-content-left,
+  .timeline-content-right {
+    width: 100%;
+    padding-left: 0;
+  }
+  .timeline-dot {
+    left: 12px;
+    top: 20px;
+    transform: translateX(0);
+  }
+}
+
 .company-card,
 .job-card {
     background: var(--card-bg);
@@ -287,12 +310,20 @@
 /* --- 5. Technical Skills --- */
 .skills-grid-new {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
     background: var(--card-bg);
     border: 1px solid var(--border-color);
-    padding: 3rem;
+    padding: 1.5rem;
     border-radius: 8px;
+}
+
+@media (min-width: 768px) {
+  .skills-grid-new {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 3rem;
+  }
 }
 
 .cybersecurity-skills h3,

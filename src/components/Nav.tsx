@@ -81,7 +81,7 @@ const Nav: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
           className={`text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold text-center mx-3 transition-all duration-300 ${
-            isScrolled ? 'text-sm px-3 py-1.5' : 'text-md px-4 py-2'
+            isScrolled ? 'text-sm px-3 py-1.5' : 'text-base px-4 py-2'
           }`}
         >
           View CV
@@ -113,7 +113,7 @@ const Nav: React.FC = () => {
           type="button"
           onClick={() => scrollToSection('contact')}
           className={`text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-bold text-center mx-3 md:mr-0 z-10 transition-all duration-300 ${
-            isScrolled ? 'text-sm px-3 py-1.5' : 'text-md px-4 py-2'
+            isScrolled ? 'text-sm px-3 py-1.5' : 'text-base px-4 py-2'
           }`}
         >
           Contact Me!
@@ -122,11 +122,11 @@ const Nav: React.FC = () => {
       </div>
       <Navbar.Collapse>
   {['home', 'whoami', 'services', 'ctfs', 'contact'].map((section) => (
-          <button 
+          <button
             key={section}
             onClick={() => scrollToSection(section)}
             className={`block pr-4 pl-3 border-b border-gray-100 text-gray-700 hover:bg-gray-50 font-bold dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-green-700 md:dark:hover:bg-transparent md:dark:hover:text-white transition-all duration-300 ${
-              isScrolled ? 'text-base text-3xl md:text-lg py-2' : 'text-3xl md:text-xl py-2.5'
+              isScrolled ? 'text-sm md:text-lg py-2' : 'text-lg md:text-xl py-2.5'
             }`}
           >
             {section.charAt(0).toUpperCase() + section.slice(1)}

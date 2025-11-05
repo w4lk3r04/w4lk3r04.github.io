@@ -43,7 +43,7 @@ const App: React.FC = () => {
           </p>
           <a
             href="#ctfs"
-            className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text:3xl text-center text-white  bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
+            className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base md:text-lg font-medium text-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
           >
             View My CTFs Writeup
             <svg
@@ -61,18 +61,19 @@ const App: React.FC = () => {
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center px-5 py-4 text-base font-medium text:3xl text-center text-gray-900 border-4 border-green-300  hover:bg-green-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-green-700 dark:hover:bg-green-700 dark:focus:ring-gray-800"
+            className="inline-flex items-center justify-center px-5 py-4 text-base md:text-lg font-medium text-center text-gray-900 border-4 border-green-300 hover:bg-green-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-green-700 dark:hover:bg-green-700 dark:focus:ring-gray-800"
           >
             Contact Me!
           </a>
         </div>
-        <div 
-          id="hacker-logo" 
-          className="lg:mt-0 lg:col-span-5 lg:flex relative z-10"
+        <div
+          id="hacker-logo"
+          className="lg:mt-0 lg:col-span-5 lg:flex relative z-10 flex justify-center items-center"
         >
           <img
             src="./assets/images/w4lk3r.jpg"
             alt="w4lk3r"
+            className="w-full max-w-xs md:max-w-sm lg:max-w-full object-contain rounded-md"
           />
         </div>
       </div>
@@ -519,8 +520,8 @@ const App: React.FC = () => {
               <p className="text-xl">
              My approach combines creative problem-solving with rigorous methodology, ensuring no stone is left unturned in the pursuit of robust security.
               </p>
-              <a href="/assets/cv.pdf" download className="inline-flex mt-8 items-center justify-center px-5 py-4 text-base font-medium text:3xl text-center text-gray-900 border-4 border-green-300  hover:bg-green-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-green-700 dark:hover:bg-green-700 dark:focus:ring-gray-800"
-          >
+        <a href="/assets/cv.pdf" download className="inline-flex mt-8 items-center justify-center px-5 py-4 text-base md:text-lg font-medium text-center text-gray-900 border-4 border-green-300 hover:bg-green-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-green-700 dark:hover:bg-green-700 dark:focus:ring-gray-800"
+      >
             Download C.V.
           </a>
             </div>
@@ -617,7 +618,7 @@ const App: React.FC = () => {
               </div>
               <button
                 type="submit"
-                className="py-3 px-5 text-lx font-medium text-center text-white bg-green-600 hover:bg-green-700 border-2 border-green-600 rounded-none sm:w-fit focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:border-green-600 dark:focus:ring-green-800"
+                className="py-3 px-5 text-lg font-medium text-center text-white bg-green-600 hover:bg-green-700 border-2 border-green-600 rounded-none sm:w-fit focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:border-green-600 dark:focus:ring-green-800"
               >
                 Send message
               </button>
