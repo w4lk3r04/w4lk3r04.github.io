@@ -254,7 +254,7 @@ const App: React.FC = () => {
             <ul className="space-y-4 text-lg text-gray-600 dark:text-gray-300">
                <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span><strong>Red Team Leaders</strong>Certified Cybersecurity Educator Professional (CCEP)</span>
+                <span><strong>Red Team Leaders:</strong>Certified Cybersecurity Educator Professional (CCEP)</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
@@ -299,7 +299,7 @@ const App: React.FC = () => {
                 <span className="mr-2">•</span>
                 <span><strong>Program Graduate:</strong> Blacks in Cybersecurity Blue Team Program</span>
                 <span><strong>Mentorship Program:</strong>Blacks in Cybersecurity Mentee</span>
-                <span><strong>Google Developer Group Kigali DevFest 2025</strong>Speaker for an exhibition session on a Google Cloud Security project</span>
+                <span><strong>GDG Kigali DevFest 2025:</strong>Speaker for an exhibition session on a Google Cloud Security project</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
