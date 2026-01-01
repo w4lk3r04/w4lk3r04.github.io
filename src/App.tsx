@@ -252,6 +252,10 @@ const App: React.FC = () => {
               <i className="fas fa-certificate mr-2"></i>Professional Certifications
             </h3>
             <ul className="space-y-4 text-lg text-gray-600 dark:text-gray-300">
+               <li className="flex items-start">
+                <span className="mr-2">•</span>
+                <span><strong>Red Team Leaders</strong>Certified Cybersecurity Educator Professional (CCEP)</span>
+              </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
                 <span><strong>Google Professional Certifications:</strong> IT Support, Cybersecurity, Cloud Cybersecurity</span>
@@ -287,12 +291,15 @@ const App: React.FC = () => {
                   <ul className="ml-6 mt-2 space-y-2">
                     <li>- 45th Place at PicoCTF 2023</li>
                     <li>- 48th/147 at Bjwhitehats CTF 2025</li>
+                    <li>- Junior Web Pentester at HackersDaddy Pentest Challenge</li>
                   </ul>
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
                 <span><strong>Program Graduate:</strong> Blacks in Cybersecurity Blue Team Program</span>
+                <span><strong>Mentorship Program:</strong>Blacks in Cybersecurity Mentee</span>
+                <span><strong>Google Developer Group Kigali DevFest 2025</strong>Speaker for an exhibition session on a Google Cloud Security project</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
