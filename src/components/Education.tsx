@@ -38,8 +38,8 @@ const Education: React.FC = () => {
             onClick={() => setSelectedDegree(degree)}
             className={`px-6 py-4 text-lg font-semibold transition-all duration-300 border-4 ${
               selectedDegree === degree
-                ? 'border-green-500 text-green-500 dark:border-green-400 dark:text-green-400'
-                : 'border-gray-300 hover:border-green-500 hover:text-green-500 dark:border-gray-600 dark:hover:border-green-400 dark:hover:text-green-400'
+                ? 'bg-green-700 border-green-700 text-white dark:bg-green-600 dark:border-green-600'
+                : 'bg-green-500 border-green-500 text-white hover:bg-green-600 hover:border-green-600 dark:bg-green-500 dark:border-green-500 dark:hover:bg-green-600 dark:hover:border-green-600'
             }`}
           >
             {degree}

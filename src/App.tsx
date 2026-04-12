@@ -178,21 +178,21 @@ const App: React.FC = () => {
                           </div>
                         </div>
                         <div className="skill-item">
-                          <span className="skill-name">DFIR</span>
+                          <span className="skill-name">SOC Analysis</span>
                           <div className="progress-bar">
                             <div className="progress-level" style={{ width: "85%" }}></div>
                           </div>
                         </div>
                         <div className="skill-item">
-                          <span className="skill-name">SOC Analysis</span>
+                          <span className="skill-name">DFIR</span>
                           <div className="progress-bar">
-                            <div className="progress-level" style={{ width: "88%" }}></div>
+                            <div className="progress-level" style={{ width: "75%" }}></div>
                           </div>
                         </div>
                         <div className="skill-item">
                           <span className="skill-name">Threat Intelligence</span>
                           <div className="progress-bar">
-                            <div className="progress-level" style={{ width: "82%" }}></div>
+                            <div className="progress-level" style={{ width: "75%" }}></div>
                           </div>
                         </div>
                       </div>
@@ -254,7 +254,12 @@ const App: React.FC = () => {
                 <ul className="space-y-4 text-lg text-gray-600 dark:text-gray-300">
                   <li className="flex items-start">
                     <span className="mr-2">•</span>
-                    <span><strong>Red Team Leaders:</strong>Certified Cybersecurity Educator Professional (CCEP)</span>
+                    <ul><strong>Red Team:</strong>
+                      <li className="ml-6 mt-2">Certified Red Team Analyst - In Progress</li>
+                      <li className="ml-6 mt-2">Certified Associate Penetration Tester - In Progress</li>
+                      <li className="ml-6 mt-2">Certified Network Security Practitioner ||CNSP||</li>
+                      <li className="ml-6 mt-2">Certified Cybersecurity Educator Professional ||CCEP||</li>
+                    </ul>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">•</span>
@@ -289,6 +294,7 @@ const App: React.FC = () => {
                     <span className="mr-2">•</span>
                     <span><strong>CTF Competitions:</strong>
                       <ul className="ml-6 mt-2 space-y-2">
+                        <li>- Top 20 of AWS Skills to Job CTF 2026</li>
                         <li>- 45th Place at PicoCTF 2023</li>
                         <li>- 48th/147 at Bjwhitehats CTF 2025</li>
                         <li>- Junior Web Pentester at HackersDaddy Pentest Challenge</li>
