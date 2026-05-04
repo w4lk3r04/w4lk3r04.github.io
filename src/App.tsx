@@ -463,22 +463,51 @@ const App: React.FC = () => {
             </div>
 
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {/* Python Network Monitor */}
+              {/* X-Detector (AgentBeats Hackathon) */}
+              <div className="group relative overflow-hidden bg-white dark:bg-black border-4 border-green-700 rounded-lg p-8 transform transition-all duration-300 hover:scale-105">
+                <div className="absolute inset-0 bg-gradient-to-br from-green-50/95 via-white/95 to-black/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:from-green-950/40 dark:via-black/80 dark:to-black/90" />
+                <div className="relative z-10">
+                  <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+                    <svg className="w-[48px] h-[48px] text-gray-800 dark:text-white transition-colors duration-300 group-hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M9.1 15.9H4.4c-.7 0-1.3-.6-1.3-1.3V4.4c0-.7.6-1.3 1.3-1.3h11.2c.7 0 1.3.6 1.3 1.3v4.7m-7.9 7.8 2.7-.4.4-2.7L18 7.9c.4-.4 1-.4 1.4 0l.7.7c.4.4.4 1 0 1.4l-8.9 8.9" />
+                    </svg>
+                  </div>
+                  <h3 className="mb-4 text-2xl font-bold dark:text-white">X-Detector</h3>
+                  <p className="text-gray-500 dark:text-gray-400 mb-4 text-lg">
+                    In the RDI Agentbeats Hackathon, we developed a top-tier security agent for the AgentBeats Security Arena. 
+                    Competing across +150 round adversarial battles, our agent successfully navigated 400+ security specifications using a three-agent orchestrated architecture. 
+                    By implementing advanced multi-layer defenses (including threat recognition and sanitization) and adaptive offensive memory, our agent secured a leading position on the public leaderboard. 
+                    Our work contributed to AI safety research by stress-testing LLM vulnerabilities in a standardized, reproducible environment.
+                    We successfully secured 2nd place on the private leaderboard after successfully running for +250 attack-defense rounds.
+                  </p>
+                  <ul className="text-gray-500 dark:text-gray-400 text-lg space-y-2">
+                    <li>• 2nd Place on the Private Leaderboard</li>
+                    <li>• Successfully ran for +250 attack-defense rounds</li>
+                    <li>• Advanced multi-layer defense architecture</li>
+                    <li className="pt-2">
+                      <img src="/images/leaderboard.png" alt="2nd place for Security Arena" className="w-full rounded-lg border border-gray-300 shadow-lg transition-all duration-300 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 dark:border-gray-700" />
+                    </li>
+                    <li>• <a href="http://agentbeats-competition-2026.s3-website-us-east-1.amazonaws.com/leaderboard/?utm_source=substack&utm_medium=email" className="text-green-500 hover:text-green-600" target="_blank" rel="noopener noreferrer">View the Leaderboard →</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Kathara Lab */}
               <div className="bg-white dark:bg-black border-4 border-green-700 rounded-lg p-8 transform transition-all duration-300 hover:scale-105">
                 <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
                   <svg className="w-[48px] h-[48px] text-gray-800 dark:text-white transition-colors duration-300 group-hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" strokeLinecap="round" strokeWidth="1" d="M17 6.6h1.8a2 2 0 0 1 2 2v10.8a2 2 0 0 1-2 2H5.2a2 2 0 0 1-2-2V8.6a2 2 0 0 1 2-2H7m5 0v1.8m0 11.4v-1.8m0-4.8v3m-5-1.5h10" />
+                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M13 3h-8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8M9 12h6m-3-3v6m3-9h5l3 3v12a2 2 0 0 1-2 2h-6" />
                   </svg>
                 </div>
-                <h3 className="mb-4 text-2xl font-bold dark:text-white">Network Monitor</h3>
+                <h3 className="mb-4 text-2xl font-bold dark:text-white">Kathara Security Lab</h3>
                 <p className="text-gray-500 dark:text-gray-400 mb-4 text-lg">
-                  Python-based network monitoring tool using Scapy and tcpdump. Features packet analysis, threat detection, and real-time alerts.
+                  Comprehensive security lab environment using Kathara for vulnerability analysis and attack simulation. Complete with infrastructure code and documentation.
                 </p>
                 <ul className="text-gray-500 dark:text-gray-400 text-lg space-y-2">
-                  <li>• Real-time traffic analysis</li>
-                  <li>• Anomaly detection</li>
-                  <li>• Custom alert system</li>
-                  <li>• <a href="https://github.com/w4lk3r04/internship-projects/blob/main/network_sniffer.py" className="text-green-500 hover:text-green-600" target="_blank" rel="noopener noreferrer">View on GitHub →</a></li>
+                  <li>• MITRE ATT&CK analysis</li>
+                  <li>• Cyber Kill Chain mapping</li>
+                  <li>• Full assessment reports</li>
+                  <li>• <a href="https://github.com/w4lk3r04/internship-projects/tree/vuln_lab" className="text-green-500 hover:text-green-600" target="_blank" rel="noopener noreferrer">View on GitHub →</a></li>
                 </ul>
               </div>
 
@@ -501,24 +530,25 @@ const App: React.FC = () => {
                 </ul>
               </div>
 
-              {/* Kathara Lab */}
+              {/* Python Network Monitor */}
               <div className="bg-white dark:bg-black border-4 border-green-700 rounded-lg p-8 transform transition-all duration-300 hover:scale-105">
                 <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
                   <svg className="w-[48px] h-[48px] text-gray-800 dark:text-white transition-colors duration-300 group-hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M13 3h-8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8M9 12h6m-3-3v6m3-9h5l3 3v12a2 2 0 0 1-2 2h-6" />
+                    <path stroke="currentColor" strokeLinecap="round" strokeWidth="1" d="M17 6.6h1.8a2 2 0 0 1 2 2v10.8a2 2 0 0 1-2 2H5.2a2 2 0 0 1-2-2V8.6a2 2 0 0 1 2-2H7m5 0v1.8m0 11.4v-1.8m0-4.8v3m-5-1.5h10" />
                   </svg>
                 </div>
-                <h3 className="mb-4 text-2xl font-bold dark:text-white">Kathara Security Lab</h3>
+                <h3 className="mb-4 text-2xl font-bold dark:text-white">Network Monitor</h3>
                 <p className="text-gray-500 dark:text-gray-400 mb-4 text-lg">
-                  Comprehensive security lab environment using Kathara for vulnerability analysis and attack simulation. Complete with infrastructure code and documentation.
+                  Python-based network monitoring tool using Scapy and tcpdump. Features packet analysis, threat detection, and real-time alerts.
                 </p>
                 <ul className="text-gray-500 dark:text-gray-400 text-lg space-y-2">
-                  <li>• MITRE ATT&CK analysis</li>
-                  <li>• Cyber Kill Chain mapping</li>
-                  <li>• Full assessment reports</li>
-                  <li>• <a href="https://github.com/w4lk3r04/internship-projects/tree/vuln_lab" className="text-green-500 hover:text-green-600" target="_blank" rel="noopener noreferrer">View on GitHub →</a></li>
+                  <li>• Real-time traffic analysis</li>
+                  <li>• Anomaly detection</li>
+                  <li>• Custom alert system</li>
+                  <li>• <a href="https://github.com/w4lk3r04/internship-projects/blob/main/network_sniffer.py" className="text-green-500 hover:text-green-600" target="_blank" rel="noopener noreferrer">View on GitHub →</a></li>
                 </ul>
               </div>
+
             </div>
           </div>
         </section>
