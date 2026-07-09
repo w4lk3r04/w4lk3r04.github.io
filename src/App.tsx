@@ -3,9 +3,54 @@ import React from "react";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Education from "./components/Education";
-import "/public/assets/css/particles.css";
+
+type ProjectCardProps = {
+  title: string;
+  brief: string;
+  expanded: boolean;
+  onToggle: () => void;
+  icon: React.ReactNode;
+  children: React.ReactNode;
+};
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, brief, expanded, onToggle, icon, children }) => {
+  return (
+    <div className="group relative overflow-hidden bg-white dark:bg-black border-4 border-green-700 rounded-lg p-8 transform transition-all duration-300 hover:scale-105 flex h-full min-h-[420px] flex-col">
+      <div className="absolute inset-0 bg-gradient-to-br from-green-50/95 via-white/95 to-black/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:from-green-950/40 dark:via-black/80 dark:to-black/90" />
+      <div className="relative z-10 flex h-full flex-col">
+        <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+          {icon}
+        </div>
+        <h3 className="mb-4 text-2xl font-bold dark:text-white">{title}</h3>
+        <p className="text-gray-500 dark:text-gray-400 text-lg">{brief}</p>
+        <div
+          className={`overflow-hidden transition-all duration-300 ${expanded ? "mt-4 max-h-[1200px] opacity-100" : "max-h-0 opacity-0"}`}
+          aria-hidden={!expanded}
+        >
+          <div className="space-y-2 text-lg text-gray-500 dark:text-gray-400">{children}</div>
+        </div>
+        <button
+          type="button"
+          onClick={onToggle}
+          className="mt-auto inline-flex items-center justify-center px-4 py-2 text-base font-medium text-white bg-green-600 hover:bg-green-700 transition-colors"
+        >
+          {expanded ? "View less" : "View more"}
+        </button>
+      </div>
+    </div>
+  );
+};
 
 const App: React.FC = () => {
+  const [expandedProjects, setExpandedProjects] = React.useState<Record<string, boolean>>({});
+
+  const toggleProject = (projectId: string) => {
+    setExpandedProjects((current) => ({
+      ...current,
+      [projectId]: !current[projectId],
+    }));
+  };
+
   return (
     <>
       <Nav />
@@ -90,7 +135,7 @@ const App: React.FC = () => {
                     A concise overview of my background — education, certifications, professional experience and skills. Download the full CV for details.
                   </p>
                   <a
-                    href="/assets/Amos_Akogbe_Resume.pdf"
+                    href="/assets/CV_aakogbe.pdf"
                     download
                     className="inline-flex items-center justify-center px-4 py-2 mt-3 text-base font-bold text-white bg-green-600 hover:bg-green-700"
                   >
@@ -311,6 +356,10 @@ const App: React.FC = () => {
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">•</span>
+                    <span><strong>Paper Presentation:</strong> Presented "A Lightweight Emulation Infrastructure for Behavioral Threat Modeling using MITRE ATT&CK" at the 4th ANSALB International Conference on Land, Smart Cities, and Sustainable Development</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
                     <span><strong>Scholarships:</strong>
                       <ul className="ml-6 mt-2">
                         <li>- Umuzi Program Scholar</li>
@@ -463,91 +512,132 @@ const App: React.FC = () => {
             </div>
 
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {/* X-Detector (AgentBeats Hackathon) */}
-              <div className="group relative overflow-hidden bg-white dark:bg-black border-4 border-green-700 rounded-lg p-8 transform transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-50/95 via-white/95 to-black/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:from-green-950/40 dark:via-black/80 dark:to-black/90" />
-                <div className="relative z-10">
-                  <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-                    <svg className="w-[48px] h-[48px] text-gray-800 dark:text-white transition-colors duration-300 group-hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M9.1 15.9H4.4c-.7 0-1.3-.6-1.3-1.3V4.4c0-.7.6-1.3 1.3-1.3h11.2c.7 0 1.3.6 1.3 1.3v4.7m-7.9 7.8 2.7-.4.4-2.7L18 7.9c.4-.4 1-.4 1.4 0l.7.7c.4.4.4 1 0 1.4l-8.9 8.9" />
-                    </svg>
-                  </div>
-                  <h3 className="mb-4 text-2xl font-bold dark:text-white">X-Detector</h3>
-                  <p className="text-gray-500 dark:text-gray-400 mb-4 text-lg">
-                    In the RDI Agentbeats Hackathon, we developed a top-tier security agent for the AgentBeats Security Arena. 
-                    Competing across +150 round adversarial battles, our agent successfully navigated 400+ security specifications using a three-agent orchestrated architecture. 
-                    By implementing advanced multi-layer defenses (including threat recognition and sanitization) and adaptive offensive memory, our agent secured a leading position on the public leaderboard. 
-                    Our work contributed to AI safety research by stress-testing LLM vulnerabilities in a standardized, reproducible environment.
-                    We successfully secured 2nd place on the private leaderboard after successfully running for +250 attack-defense rounds.
-                  </p>
-                  <ul className="text-gray-500 dark:text-gray-400 text-lg space-y-2">
-                    <li>• 2nd Place on the Private Leaderboard</li>
-                    <li>• Successfully ran for +250 attack-defense rounds</li>
-                    <li>• Advanced multi-layer defense architecture</li>
-                    <li className="pt-2">
-                      <img src="/images/leaderboard.png" alt="2nd place for Security Arena" className="w-full rounded-lg border border-gray-300 shadow-lg transition-all duration-300 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 dark:border-gray-700" />
-                    </li>
-                    <li>• <a href="http://agentbeats-competition-2026.s3-website-us-east-1.amazonaws.com/leaderboard/?utm_source=substack&utm_medium=email" className="text-green-500 hover:text-green-600" target="_blank" rel="noopener noreferrer">View the Leaderboard →</a></li>
-                  </ul>
-                </div>
-              </div>
+              <ProjectCard
+                title="CTI Feed Collector - Aegis Intel"
+                brief="Python threat intelligence workflow for multi-source feed collection and automated enrichment."
+                expanded={expandedProjects.aegis ?? false}
+                onToggle={() => toggleProject("aegis")}
+                icon={
+                  <svg className="w-[48px] h-[48px] text-gray-800 dark:text-white transition-colors duration-300 group-hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 18V6m0 12 4-4m-4 4-4-4M4 6h16" />
+                  </svg>
+                }
+              >
+                <p>
+                  Built a threat intelligence workflow with fully automated multi-source feed collection and intelligence processing.
+                </p>
+                <ul>
+                  <li>• Python, AI, and threat modeling</li>
+                  <li>• qwen2.5:1.5b for automated relevance scoring and classification</li>
+                  <li>• Email and Slack alerts for high and critical threats or vulnerabilities</li>
+                  <li>• <a href="https://github.com/w4lk3r04/Aegis-Intel" className="text-green-500 hover:underline" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+                </ul>
+              </ProjectCard>
 
-              {/* Kathara Lab */}
-              <div className="bg-white dark:bg-black border-4 border-green-700 rounded-lg p-8 transform transition-all duration-300 hover:scale-105">
-                <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+              <ProjectCard
+                title="X-Detector"
+                brief="An AgentBeats hackathon security agent that performed across more than 250 attack-defense rounds."
+                expanded={expandedProjects.xDetector ?? false}
+                onToggle={() => toggleProject("xDetector")}
+                icon={
+                  <svg className="w-[48px] h-[48px] text-gray-800 dark:text-white transition-colors duration-300 group-hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M9.1 15.9H4.4c-.7 0-1.3-.6-1.3-1.3V4.4c0-.7.6-1.3 1.3-1.3h11.2c.7 0 1.3.6 1.3 1.3v4.7m-7.9 7.8 2.7-.4.4-2.7L18 7.9c.4-.4 1-.4 1.4 0l.7.7c.4.4.4 1 0 1.4l-8.9 8.9" />
+                  </svg>
+                }
+              >
+                <p>
+                  In the RDI Agentbeats Hackathon, we developed a top-tier security agent for the AgentBeats Security Arena.
+                </p>
+                <ul>
+                  <li>• 2nd Place on the Private Leaderboard</li>
+                  <li>• Successfully ran for +250 attack-defense rounds</li>
+                  <li>• Advanced multi-layer defense architecture</li>
+                  <li className="pt-2">
+                    <img src="/images/leaderboard.png" alt="2nd place for Security Arena" className="w-full rounded-lg border border-gray-300 shadow-lg transition-all duration-300 dark:border-gray-700" />
+                  </li>
+                  <li>• <a href="http://agentbeats-competition-2026.s3-website-us-east-1.amazonaws.com/leaderboard/?utm_source=substack&utm_medium=email" className="text-green-500 hover:text-green-600" target="_blank" rel="noopener noreferrer">View the Leaderboard →</a></li>
+                </ul>
+              </ProjectCard>
+
+              <ProjectCard
+                title="Kathara Security Lab"
+                brief="A security lab environment for vulnerability analysis and attack simulation."
+                expanded={expandedProjects.kathara ?? false}
+                onToggle={() => toggleProject("kathara")}
+                icon={
                   <svg className="w-[48px] h-[48px] text-gray-800 dark:text-white transition-colors duration-300 group-hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M13 3h-8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8M9 12h6m-3-3v6m3-9h5l3 3v12a2 2 0 0 1-2 2h-6" />
                   </svg>
-                </div>
-                <h3 className="mb-4 text-2xl font-bold dark:text-white">Kathara Security Lab</h3>
-                <p className="text-gray-500 dark:text-gray-400 mb-4 text-lg">
-                  Comprehensive security lab environment using Kathara for vulnerability analysis and attack simulation. Complete with infrastructure code and documentation.
-                </p>
-                <ul className="text-gray-500 dark:text-gray-400 text-lg space-y-2">
+                }
+              >
+                <p>Comprehensive security lab environment using Kathara for vulnerability analysis and attack simulation.</p>
+                <ul>
                   <li>• MITRE ATT&CK analysis</li>
                   <li>• Cyber Kill Chain mapping</li>
                   <li>• Full assessment reports</li>
                   <li>• <a href="https://github.com/w4lk3r04/internship-projects/tree/vuln_lab" className="text-green-500 hover:text-green-600" target="_blank" rel="noopener noreferrer">View on GitHub →</a></li>
                 </ul>
-              </div>
+              </ProjectCard>
 
-              {/* Secure File Exchange */}
-              <div className="bg-white dark:bg-black border-4 border-green-700 rounded-lg p-8 transform transition-all duration-300 hover:scale-105">
-                <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+              <ProjectCard
+                title="SecureShare"
+                brief="Cloud security incident response using the NIST CSF framework."
+                expanded={expandedProjects.secureshare ?? false}
+                onToggle={() => toggleProject("secureshare")}
+                icon={
                   <svg className="w-[48px] h-[48px] text-gray-800 dark:text-white transition-colors duration-300 group-hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M9.1 15.9H4.4c-.7 0-1.3-.6-1.3-1.3V4.4c0-.7.6-1.3 1.3-1.3h11.2c.7 0 1.3.6 1.3 1.3v4.7m-7.9 7.8 2.7-.4.4-2.7L18 7.9c.4-.4 1-.4 1.4 0l.7.7c.4.4.4 1 0 1.4l-8.9 8.9" />
                   </svg>
-                </div>
-                <h3 className="mb-4 text-2xl font-bold dark:text-white">SecureShare</h3>
-                <p className="text-gray-500 dark:text-gray-400 mb-4 text-lg">
-                  Cloud Security Incident Response spanning the whole security incident response according to the NIST CSF framework
-                </p>
-                <ul className="text-gray-500 dark:text-gray-400 text-lg space-y-2">
+                }
+              >
+                <p>Cloud Security Incident Response spanning the whole security incident response according to the NIST CSF framework.</p>
+                <ul>
                   <li>• Automated Vulnerability Assessment and Risk management using Google Cloud Security Command Center</li>
                   <li>• Security Playbooks updates and incident response</li>
                   <li>• Full documentation and reporting</li>
                   <li>• <a href="https://hackmd.io/@Sp1der04/Hkq8-Dt6lx" className="text-green-500 hover:text-green-600" target="https://hackmd.io/@Sp1der04/Hkq8-Dt6lx" rel="noopener noreferrer">View the Full report →</a></li>
                 </ul>
-              </div>
+              </ProjectCard>
 
-              {/* Python Network Monitor */}
-              <div className="bg-white dark:bg-black border-4 border-green-700 rounded-lg p-8 transform transition-all duration-300 hover:scale-105">
-                <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+              <ProjectCard
+                title="Google Cloud Security Incident Response"
+                brief="A GCP incident response project focused on vulnerability remediation and secure policy enforcement."
+                expanded={expandedProjects.gcpIncident ?? false}
+                onToggle={() => toggleProject("gcpIncident")}
+                icon={
+                  <svg className="w-[48px] h-[48px] text-gray-800 dark:text-white transition-colors duration-300 group-hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3Zm0 3.5v10m0-10L6 9m6-2.5 6 2.5" />
+                  </svg>
+                }
+              >
+                <p>October 2025. Incident response project focused on GCP security tools, Kubernetes, GDPR, and ISO 27001 alignment.</p>
+                <ul>
+                  <li>• Identified vulnerable assets and the related misconfigurations using Security Command Center</li>
+                  <li>• Deleted vulnerable assets and applied secure firewall and Cloud Storage bucket policies</li>
+                  <li>• Documented incidents for the playbook to reinforce the incident response process</li>
+                </ul>
+              </ProjectCard>
+
+              <ProjectCard
+                title="Network Monitor"
+                brief="Python network monitoring with packet analysis, threat detection, and real-time alerts."
+                expanded={expandedProjects.networkMonitor ?? false}
+                onToggle={() => toggleProject("networkMonitor")}
+                icon={
                   <svg className="w-[48px] h-[48px] text-gray-800 dark:text-white transition-colors duration-300 group-hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" strokeLinecap="round" strokeWidth="1" d="M17 6.6h1.8a2 2 0 0 1 2 2v10.8a2 2 0 0 1-2 2H5.2a2 2 0 0 1-2-2V8.6a2 2 0 0 1 2-2H7m5 0v1.8m0 11.4v-1.8m0-4.8v3m-5-1.5h10" />
                   </svg>
-                </div>
-                <h3 className="mb-4 text-2xl font-bold dark:text-white">Network Monitor</h3>
-                <p className="text-gray-500 dark:text-gray-400 mb-4 text-lg">
-                  Python-based network monitoring tool using Scapy and tcpdump. Features packet analysis, threat detection, and real-time alerts.
-                </p>
-                <ul className="text-gray-500 dark:text-gray-400 text-lg space-y-2">
+                }
+              >
+                <p>Python-based network monitoring tool using Scapy and tcpdump. Features packet analysis, threat detection, and real-time alerts.</p>
+                <ul>
                   <li>• Real-time traffic analysis</li>
                   <li>• Anomaly detection</li>
                   <li>• Custom alert system</li>
                   <li>• <a href="https://github.com/w4lk3r04/internship-projects/blob/main/network_sniffer.py" className="text-green-500 hover:text-green-600" target="_blank" rel="noopener noreferrer">View on GitHub →</a></li>
                 </ul>
-              </div>
+              </ProjectCard>
+
 
             </div>
           </div>
@@ -566,7 +656,7 @@ const App: React.FC = () => {
               <p className="text-xl">
                 My approach combines creative problem-solving with rigorous methodology, ensuring no stone is left unturned in the pursuit of robust security.
               </p>
-              <a href="/assets/cv.pdf" download className="inline-flex mt-8 items-center justify-center px-5 py-4 text-base md:text-lg font-medium text-center text-gray-900 border-4 border-green-300 hover:bg-green-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-green-700 dark:hover:bg-green-700 dark:focus:ring-gray-800"
+              <a href="/assets/CV_aakogbe.pdf" download className="inline-flex mt-8 items-center justify-center px-5 py-4 text-base md:text-lg font-medium text-center text-gray-900 border-4 border-green-300 hover:bg-green-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-green-700 dark:hover:bg-green-700 dark:focus:ring-gray-800"
               >
                 Download C.V.
               </a>
