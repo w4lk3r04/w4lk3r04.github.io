@@ -50,23 +50,32 @@ const Footer: React.FC = () => {
       </button>
 
       {/* Footer Content */}
-      <footer className="bg-white py-4 dark:bg-black">
-        <div className="max-w-screen-xl mx-auto p-4 md:flex md:items-center md:justify-between">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            © {new Date().getFullYear()} Sp1der04. All Rights Reserved.
-          </span>
-          <ul className="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
-            <li>
-              Brought to you with ❤️ by <a href="https://Sp1der04.github.io" className="mr-4 hover:underline md:mr-6">
-                Sp1der04 aka Amos Akogbe
-              </a>
-            </li>
-            <li>
-              <a href="/privacy" className="mr-4 hover:underline md:mr-6">
-                Privacy Policy
-              </a>
-            </li>
-          </ul>
+      <footer className="border-t-4 border-green-700 bg-white py-8 dark:bg-black">
+        <div className="max-w-screen-xl mx-auto px-4 md:flex md:items-start md:justify-between md:gap-8">
+          <div className="max-w-md">
+            <span className="block text-sm font-semibold uppercase tracking-[0.25em] text-green-600 dark:text-green-400">
+              Sp1der04
+            </span>
+            <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
+              Incident forensics, investigations, CTFs, and security engineering built into one portfolio.
+            </p>
+            <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
+              © {new Date().getFullYear()} Sp1der04. All Rights Reserved.
+            </p>
+          </div>
+          <div className="mt-6 md:mt-0">
+            <div className="text-sm font-semibold uppercase tracking-[0.25em] text-gray-700 dark:text-gray-200">
+              Navigate
+            </div>
+            <ul className="mt-3 grid grid-cols-2 gap-x-8 gap-y-3 text-sm text-gray-500 dark:text-gray-400 sm:grid-cols-3">
+              <li><a href="/#home" className="hover:underline">Home</a></li>
+              <li><a href="/#whoami" className="hover:underline">Whoami</a></li>
+              <li><a href="/#services" className="hover:underline">Services</a></li>
+              <li><a href="/#contact" className="hover:underline">Contact</a></li>
+              <li><a href="/investigations.html" className="hover:underline">Investigations</a></li>
+              <li><a href="/#ctfs" className="hover:underline">CTFs</a></li>
+            </ul>
+          </div>
         </div>
       </footer>
     </>

@@ -121,7 +121,7 @@ const Nav: React.FC = () => {
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
-  {['home', 'whoami', 'services', 'ctfs', 'contact'].map((section) => (
+  {['home', 'whoami', 'services', 'contact'].map((section) => (
           <button
             key={section}
             onClick={() => scrollToSection(section)}

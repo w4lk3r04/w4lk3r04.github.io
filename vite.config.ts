@@ -13,12 +13,12 @@ export default defineConfig({
     outDir: 'dist',
     emptyOutDir: true,
     rollupOptions: {
-      output: {
-        entryFileNames: 'assets/[name].js',
-        chunkFileNames: 'assets/[name].js',
-        assetFileNames: 'assets/[name].[ext]'
-      }
-    }
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+        investigations: path.resolve(__dirname, 'investigations.html'),
+      },
+    },
+    
   },
   publicDir: 'public'
 });

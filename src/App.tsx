@@ -407,6 +407,63 @@ const App: React.FC = () => {
 
         </section>
 
+        {/* #### INVESTIGATIONS PREVIEW #### */}
+        <section id="investigations-preview" className="bg-white dark:bg-black py-12">
+          <div className="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 lg:py-16">
+            <div className="grid gap-8 lg:grid-cols-12 items-center">
+              <div className="lg:col-span-5">
+                <p className="mb-3 text-sm font-semibold uppercase tracking-[0.35em] text-green-600 dark:text-green-400">
+                  Incident forensics and investigations
+                </p>
+                <h2 className="mb-4 text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+                  Three featured incident reports, kept in a dedicated archive
+                </h2>
+                <p className="text-xl text-gray-600 dark:text-gray-300">
+                  The homepage now only gives a short highlight. Open the investigation archive to flip through the case cards and view each PDF.
+                </p>
+                <a
+                  href="/investigations.html"
+                  className="inline-flex items-center justify-center px-5 py-3 mt-6 text-base md:text-lg font-medium text-center text-white bg-green-600 hover:bg-green-700 border-2 border-green-600"
+                >
+                  Open investigations archive
+                </a>
+              </div>
+
+              <div className="lg:col-span-7">
+                <a
+                  href="/investigations.html"
+                  className="group block border-4 border-green-700 bg-white p-4 shadow-[0_18px_50px_rgba(15,23,42,0.12)] transition-transform duration-300 hover:-translate-y-1 dark:bg-black"
+                >
+                  <div className="grid gap-4 sm:grid-cols-3">
+                    {[
+                      ["Dai Wok Foods", "Timeline, evidence, root cause"],
+                      ["FokkeBV", "Ransomware triage and recovery"],
+                      ["FramtidX", "Stakeholder-ready investigation"],
+                    ].map(([title, summary]) => (
+                      <div
+                        key={title}
+                        className="aspect-square border-2 border-dashed border-green-500 bg-green-50 p-4 flex flex-col justify-between dark:border-green-800 dark:bg-green-950/30"
+                      >
+                        <div>
+                          <div className="text-xs font-semibold uppercase tracking-[0.25em] text-green-600 dark:text-green-400">
+                            Case file
+                          </div>
+                          <h3 className="mt-3 text-2xl font-extrabold text-gray-900 dark:text-white">{title}</h3>
+                        </div>
+                        <p className="text-sm text-gray-600 dark:text-gray-300">{summary}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-4 flex items-center justify-between text-sm font-semibold text-green-700 dark:text-green-300">
+                    <span>Open the archive to flip the cards</span>
+                    <span aria-hidden="true">→</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* #### SERVICES SECTION #### */}
         <section id="services" className="pt-8 pb-12 bg-white dark:bg-black flex justify-center items-center">
           <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 text-center">
