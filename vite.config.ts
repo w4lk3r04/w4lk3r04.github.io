@@ -17,6 +17,7 @@ export default defineConfig({
         main: path.resolve(__dirname, 'index.html'),
         investigations: path.resolve(__dirname, 'investigations.html'),
         anthropicReport: path.resolve(__dirname, 'anthropic-security-report.html'),
+        blog: path.resolve(__dirname, 'blog.html'),
       },
     },
     

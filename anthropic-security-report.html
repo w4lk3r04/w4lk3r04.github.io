@@ -41,17 +41,42 @@
     background: var(--bg);
     color: var(--ink);
     font-family: 'IBM Plex Sans', system-ui, sans-serif;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
   .display { font-family: 'Space Grotesk', sans-serif; }
   .mono { font-family: 'IBM Plex Mono', monospace; }
 
   #deck {
-    height: 100%;
+    height: 100vh;
+    min-height: 640px;
     width: 100%;
     position: relative;
     touch-action: pan-y;
   }
+
+  .comments-section {
+    background: #0A0F1A;
+    border-top: 1px solid var(--line);
+    padding: clamp(36px, 7vw, 88px) clamp(20px, 6vw, 96px) clamp(48px, 8vw, 96px);
+  }
+  .comments-inner { max-width: 960px; margin: 0 auto; }
+  .comments-kicker {
+    color: var(--red);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .comments-section h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: 1.05;
+    margin: 12px 0;
+  }
+  .comments-section p { color: var(--ink-dim); line-height: 1.6; max-width: 62ch; }
+  .comments-section a { color: var(--teal); }
+  .utterances { max-width: none; margin-top: 28px; }
   .slide {
     position: absolute;
     inset: 0;
@@ -741,6 +766,25 @@
   </section>
 
 </div>
+
+<section class="comments-section" aria-labelledby="comments-title">
+  <div class="comments-inner">
+    <div class="comments-kicker">Reader discussion</div>
+    <h2 id="comments-title">What did you take from this report?</h2>
+    <p>
+      Share an observation, correction, or question. Comments use GitHub, so you can participate with your GitHub account and keep the discussion tied to this article.
+      <a href="/blog.html">Browse all articles</a>.
+    </p>
+    <script src="https://utteranc.es/client.js"
+      repo="w4lk3r04/w4lk3r04.github.io"
+      issue-term="pathname"
+      label="blog-comment"
+      theme="github-dark"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </div>
+</section>
 
 <script>
   const slides = Array.from(document.querySelectorAll('.slide'));
